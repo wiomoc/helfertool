@@ -235,6 +235,8 @@ if oidc_config:
 
     OIDC_RP_CLIENT_ID = dict_get(oidc_config, None, "provider", "client_id")
     OIDC_RP_CLIENT_SECRET = dict_get(oidc_config, None, "provider", "client_secret")
+    if OIDC_RP_CLIENT_SECRET:
+        OIDC_TOKEN_USE_BASIC_AUTH = True
 
     OIDC_OP_AUTHORIZATION_ENDPOINT = dict_get(oidc_config, None, "provider", "authorization_endpoint")
     OIDC_OP_TOKEN_ENDPOINT = dict_get(oidc_config, None, "provider", "token_endpoint")
